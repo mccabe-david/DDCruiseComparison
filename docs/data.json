@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-05-17T00:46:07.298374+00:00",
+  "voyages": [
+    {
+      "voyageId": "DD1566",
+      "packageCode": "4PESJ",
+      "startDate": "2027-04-12",
+      "endDate": "2027-04-16",
+      "totalAvailable": 360,
+      "stateroomTypes": [
+        {
+          "type": "DD-INSIDE",
+          "count": 7,
+          "startingPrice": 2512.08,
+          "subtypes": [
+            {
+              "name": "DD-INSIDE-STANDARD",
+              "category": "11A",
+              "count": 7,
+              "startingPrice": 2512.08
+            }
+          ]
+        },
+        {
+          "type": "DD-OUTSIDE",
+          "count": 38,
+          "startingPrice": 2688.08,
+          "subtypes": [
+            {
+              "name": "DD-OUTSIDE-DELUXEFAMILY",
+              "category": "08C",
+              "count": 26,
+              "startingPrice": 2920.08
+            },
+            {
+              "name": "DD-OUTSIDE-DELUXE",
+              "category": "09B",
+              "count": 11,
+              "startingPrice": 2712.08
+            },
+            {
+              "name": "DD-OUTSIDE-DELUXE-09C-GUARANTEED",
+              "category": "09C",
+              "count": 1,
+              "startingPrice": 2688.08
+            }
+          ]
+        },
+        {
+          "type": "DD-SUITE",
+          "count": 22,
+          "startingPrice": 5056.08,
+          "subtypes": [
+            {
+              "name": "DD-SUITE-CONCIERGE-TOWER",
+              "category": "01A",
+              "count": 1,
+              "startingPrice": 21784.08
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-ROYAL",
+              "category": "01B",
+              "count": 2,
+              "startingPrice": 15184.08
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-ONE-BEDROOM",
+              "category": "02B",
+              "count": 3,
+              "startingPrice": 6512.08
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-FAMILY-OCEANVIEW",
+              "category": "03A",
+              "count": 16,
+              "startingPrice": 5056.08
+            }
+          ]
+        },
+        {
+          "type": "DD-VERANDAH",
+          "count": 293,
+          "startingPrice": 2992.08,
+          "subtypes": [
+            {
+              "name": "DD-VERANDAH-DELUXEFAMILY",
+              "category": "04E",
+              "count": 119,
+              "startingPrice": 3184.08
+            },
+            {
+              "name": "DD-VERANDAH-DELUXEOCEANVIEW",
+              "category": "05A",
+              "count": 174,
+              "startingPrice": 2992.08
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "voyageId": "DD1567",
+      "packageCode": "7SJU",
+      "startDate": "2027-04-16",
+      "endDate": "2027-04-23",
+      "totalAvailable": 74,
+      "stateroomTypes": [
+        {
+          "type": "DD-INSIDE",
+          "count": 1,
+          "startingPrice": 7883.74,
+          "subtypes": [
+            {
+              "name": "DD-INSIDE-STANDARD",
+              "category": "11A",
+              "count": 1,
+              "startingPrice": 7883.74
+            }
+          ]
+        },
+        {
+          "type": "DD-OUTSIDE",
+          "count": 2,
+          "startingPrice": 9031.74,
+          "subtypes": [
+            {
+              "name": "DD-OUTSIDE-DELUXEFAMILY-08A-GUARANTEED",
+              "category": "08A",
+              "count": 1,
+              "startingPrice": 9185.74
+            },
+            {
+              "name": "DD-OUTSIDE-DELUXEFAMILY",
+              "category": "08B",
+              "count": 1,
+              "startingPrice": 9031.74
+            }
+          ]
+        },
+        {
+          "type": "DD-VERANDAH",
+          "count": 71,
+          "startingPrice": 9143.74,
+          "subtypes": [
+            {
+              "name": "DD-VERANDAH-DELUXEFAMILY",
+              "category": "04B",
+              "count": 58,
+              "startingPrice": 9717.74
+            },
+            {
+              "name": "DD-VERANDAH-DELUXEOCEANVIEW",
+              "category": "05A",
+              "count": 13,
+              "startingPrice": 9143.74
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "voyageId": "DD1568",
+      "packageCode": "4SJPC",
+      "startDate": "2027-04-23",
+      "endDate": "2027-04-27",
+      "totalAvailable": 286,
+      "stateroomTypes": [
+        {
+          "type": "DD-INSIDE",
+          "count": 1,
+          "startingPrice": 3137.66,
+          "subtypes": [
+            {
+              "name": "DD-INSIDE-STANDARD",
+              "category": "11A",
+              "count": 1,
+              "startingPrice": 3137.66
+            }
+          ]
+        },
+        {
+          "type": "DD-OUTSIDE",
+          "count": 2,
+          "startingPrice": 3577.66,
+          "subtypes": [
+            {
+              "name": "DD-OUTSIDE-DELUXEFAMILY",
+              "category": "08C",
+              "count": 2,
+              "startingPrice": 3577.66
+            }
+          ]
+        },
+        {
+          "type": "DD-SUITE",
+          "count": 13,
+          "startingPrice": 4977.66,
+          "subtypes": [
+            {
+              "name": "DD-SUITE-CONCIERGE-TOWER",
+              "category": "01A",
+              "count": 1,
+              "startingPrice": 21561.66
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-ROYAL",
+              "category": "01B",
+              "count": 2,
+              "startingPrice": 15017.66
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-ONE-BEDROOM",
+              "category": "02B",
+              "count": 3,
+              "startingPrice": 6417.66
+            },
+            {
+              "name": "DD-SUITE-CONCIERGE-FAMILY-OCEANVIEW",
+              "category": "03A",
+              "count": 7,
+              "startingPrice": 4977.66
+            }
+          ]
+        },
+        {
+          "type": "DD-VERANDAH",
+          "count": 270,
+          "startingPrice": 3553.66,
+          "subtypes": [
+            {
+              "name": "DD-VERANDAH-DELUXEFAMILY",
+              "category": "04E",
+              "count": 127,
+              "startingPrice": 3785.66
+            },
+            {
+              "name": "DD-VERANDAH-DELUXEOCEANVIEW",
+              "category": "05A",
+              "count": 143,
+              "startingPrice": 3553.66
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
