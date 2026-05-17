@@ -42,7 +42,7 @@
   <div class="bar">
     <button id="refresh">Refresh</button>
     <button class="alt" data-sort="deck">Sort by Floor</button>
-    <button class="alt" data-sort="type">Sort by Room Type</button>
+    <button class="alt" data-sort="subtype">Sort by Room Type</button>
     <span id="status"></span>
   </div>
   <div class="wrap"><table id="tbl">
@@ -56,14 +56,43 @@ const PRICE = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD
 const pretty = (s) => (s || "").replace(/^DD-/, "").replace(/-/g, " ").toLowerCase()
   .replace(/\b\w/g, (c) => c.toUpperCase());
 
+// Friendly names for Disney stateroom subtypes (the API only gives codes).
+const STATEROOM_NAMES = {
+  "DD-INSIDE-STANDARD": "Inside Stateroom",
+  "DD-OUTSIDE-DELUXE": "Deluxe Oceanview Stateroom",
+  "DD-OUTSIDE-DELUXEFAMILY": "Deluxe Family Oceanview Stateroom",
+  "DD-VERANDAH-DELUXEOCEANVIEW": "Deluxe Oceanview Verandah Stateroom",
+  "DD-VERANDAH-DELUXEFAMILY": "Deluxe Family Verandah Stateroom",
+  "DD-SUITE-CONCIERGE-FAMILY-OCEANVIEW": "Concierge Family Oceanview Stateroom",
+  "DD-SUITE-CONCIERGE-ONE-BEDROOM": "Concierge One-Bedroom Suite",
+  "DD-SUITE-CONCIERGE-ROYAL": "Concierge Royal Suite",
+  "DD-SUITE-CONCIERGE-TOWER": "Concierge Tower Suite",
+};
+function roomName(subtype, category) {
+  if (!subtype) return "—";
+  const guaranteed = /-GUARANTEED$/.test(subtype);
+  // strip an embedded category code (e.g. DD-OUTSIDE-DELUXE-09C-GUARANTEED) and the suffix
+  const base = subtype.replace(/-[0-9]{2}[A-Z]-GUARANTEED$/, "").replace(/-GUARANTEED$/, "");
+  let name = STATEROOM_NAMES[base] || pretty(base);
+  // Category 06x verandah rooms are the same stateroom but with a slightly obstructed view.
+  if (base === "DD-VERANDAH-DELUXEOCEANVIEW" && /^06/.test(category || "")) {
+    name += " — Obstructed View";
+  }
+  return name + (guaranteed ? " (Guaranteed)" : "");
+}
+const CATEGORY_TIP = "Disney category code. The number is the stateroom class; " +
+  "the letter is a location tier of the same room — A is most central/midship, " +
+  "later letters sit toward the aft (larger balconies, wake views). " +
+  "The Floor and Location columns show the actual position.";
+
 let state = { rooms: [], voyageOrder: [], sortKey: "deck", sortDir: 1 };
 
 function columns() {
   const cols = [
     { key: "stateroomId", label: "Room #" },
     { key: "deck", label: "Floor", num: true },
-    { key: "type", label: "Room Type", fmt: pretty },
-    { key: "category", label: "Category" },
+    { key: "subtype", label: "Room Type", fmtRoom: (r) => roomName(r.subtype, r.category) },
+    { key: "category", label: "Category", tip: CATEGORY_TIP },
     { key: "location", label: "Location", fmt: pretty },
   ];
   for (const v of state.voyageOrder) {
@@ -94,15 +123,17 @@ function sortRooms() {
 function render() {
   const cols = columns();
   document.getElementById("head").innerHTML = cols.map((c) =>
-    `<th data-key="${c.key}" class="${c.key === state.sortKey ? "sorted" : ""}">${c.label}` +
+    `<th data-key="${c.key}" title="${c.tip || ""}" class="${c.key === state.sortKey ? "sorted" : ""}">${c.label}` +
     `${c.key === state.sortKey ? (state.sortDir > 0 ? " ▲" : " ▼") : ""}</th>`).join("");
 
   sortRooms();
   document.getElementById("body").innerHTML = state.rooms.map((r) =>
     "<tr>" + cols.map((c) => {
       const v = valueOf(r, c.key);
-      let text = v == null ? "—" : c.price ? PRICE.format(v) : c.fmt ? c.fmt(v) : v;
-      return `<td class="${c.num ? "num" : ""} ${c.total ? "total" : ""}">${text}</td>`;
+      let text = c.fmtRoom ? c.fmtRoom(r)
+        : v == null ? "—" : c.price ? PRICE.format(v) : c.fmt ? c.fmt(v) : v;
+      const title = c.tip ? ` title="${c.tip}"` : "";
+      return `<td${title} class="${c.num ? "num" : ""} ${c.total ? "total" : ""}">${text}</td>`;
     }).join("") + "</tr>").join("");
 
   document.querySelectorAll("th[data-key]").forEach((th) => {
