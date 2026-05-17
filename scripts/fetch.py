@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Fetch Disney Cruise Line stateroom availability for a set of voyages.
 
-Writes docs/data.json consumed by the GitHub Pages site.
-Run with no logged-in session: an anonymous client token is fetched automatically.
+For each voyage it pulls the per-stateroom list (room numbers, deck, price),
+then keeps only rooms that are available on every voyage. Writes docs/data.json
+consumed by the GitHub Pages site.
+
+Runs with no logged-in session: an anonymous client token is fetched first.
 """
 import json
 import sys
@@ -12,10 +15,10 @@ from datetime import datetime, timezone
 VOYAGES = ["DD1566", "DD1567", "DD1568"]
 BASE = "https://disneycruise.disney.go.com"
 TOKEN_URL = f"{BASE}/authentication/get-client-token/"
-AVAIL_URL = f"{BASE}/dcl-apps-sailingavailability-vas/stateroom-availability/voyages/"
+ROOMS_URL = f"{BASE}/dcl-apps-sailingavailability-vas/stateroom-availability/voyages/{{}}/staterooms"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/147.0.0.0 Safari/537.36"
 
-PARTY_MIX = {
+REQUEST_BODY = json.dumps({
     "region": "en-us",
     "currency": "USD",
     "partyMix": [{
@@ -27,7 +30,7 @@ PARTY_MIX = {
     "affiliations": [],
     "swid": "",
     "cartId": "",
-}
+}).encode()
 
 
 def get_token():
@@ -36,8 +39,7 @@ def get_token():
         return json.load(r)["access_token"]
 
 
-def fetch_voyage(voyage, token):
-    body = json.dumps(PARTY_MIX).encode()
+def fetch_rooms(voyage, token):
     headers = {
         "accept": "application/json, text/plain, */*",
         "authorization": f"BEARER {token}",
@@ -48,65 +50,86 @@ def fetch_voyage(voyage, token):
         "x-use-voyage-svc": "true",
         "x-dash-phase-one": "true",
     }
-    req = urllib.request.Request(AVAIL_URL + voyage, data=body, headers=headers, method="POST")
-    with urllib.request.urlopen(req, timeout=45) as r:
-        return json.load(r)
-
-
-def parse_voyage(voyage, raw):
-    sessions = raw.get("sessions") or []
-    if not sessions:
-        return {"voyageId": voyage, "error": "no session data"}
-    s = sessions[0]
-    pkg = s.get("voyagePackage", {})
-    types = []
-    total = 0
-    for tk, tv in s.get("stateroomTypes", {}).items():
-        subtypes = []
-        for sk, sv in tv.get("stateroomSubtypes", {}).items():
-            subtypes.append({
-                "name": sk,
-                "category": sv.get("stateroomCategory"),
-                "count": sv.get("stateroomCount", 0),
-                "startingPrice": sv.get("startingPrice"),
-            })
-        count = tv.get("stateroomCount", 0)
-        total += count
-        types.append({
-            "type": tk,
-            "count": count,
-            "startingPrice": tv.get("startingPrice"),
-            "subtypes": sorted(subtypes, key=lambda x: x["category"] or ""),
-        })
-    types.sort(key=lambda x: x["type"])
-    return {
+    req = urllib.request.Request(ROOMS_URL.format(voyage), data=REQUEST_BODY, headers=headers, method="POST")
+    with urllib.request.urlopen(req, timeout=60) as r:
+        raw = json.load(r)
+    session = (raw.get("sessions") or [None])[0]
+    if not session:
+        raise RuntimeError("no session data")
+    pkg = session.get("voyagePackage", {})
+    meta = {
         "voyageId": voyage,
         "packageCode": pkg.get("packageCode"),
         "startDate": pkg.get("vacStartDate"),
         "endDate": pkg.get("vacEndDate"),
-        "totalAvailable": total,
-        "stateroomTypes": types,
     }
+    rooms = {}
+    for tv in session.get("stateroomTypes", {}).values():
+        for sv in tv.get("stateroomSubtypes", {}).values():
+            for loc in sv.get("locations", {}).values():
+                for deck in loc.get("decks", {}).values():
+                    for room in deck.get("staterooms", []):
+                        rid = room.get("stateroomId")
+                        if not rid:
+                            continue
+                        rooms[rid] = {
+                            "stateroomId": rid,
+                            "deck": room.get("stateroomDeck"),
+                            "type": room.get("stateroomType"),
+                            "subtype": room.get("stateroomSubtype"),
+                            "category": room.get("stateroomCategory"),
+                            "location": room.get("stateroomLocation"),
+                            "price": (room.get("price", {}).get("summary", {}) or {}).get("total"),
+                        }
+    return meta, rooms
 
 
 def main():
     token = get_token()
-    voyages = []
+    metas = []
+    per_voyage = {}
     for v in VOYAGES:
-        try:
-            voyages.append(parse_voyage(v, fetch_voyage(v, token)))
-        except Exception as exc:  # noqa: BLE001
-            voyages.append({"voyageId": v, "error": str(exc)})
+        meta, rooms = fetch_rooms(v, token)
+        metas.append(meta)
+        per_voyage[v] = rooms
+
+    # rooms available on every voyage
+    common_ids = set.intersection(*(set(r.keys()) for r in per_voyage.values()))
+    rooms = []
+    for rid in common_ids:
+        ref = per_voyage[VOYAGES[0]][rid]
+        prices = {v: per_voyage[v][rid]["price"] for v in VOYAGES}
+        total = sum(p for p in prices.values() if p is not None) if all(
+            prices[v] is not None for v in VOYAGES) else None
+        rooms.append({
+            "stateroomId": rid,
+            "deck": ref["deck"],
+            "type": ref["type"],
+            "subtype": ref["subtype"],
+            "category": ref["category"],
+            "location": ref["location"],
+            "prices": prices,
+            "total": total,
+        })
+    rooms.sort(key=lambda r: ((r["deck"] or 0), r["type"] or "", r["stateroomId"]))
+
     out = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "voyages": voyages,
+        "voyageOrder": VOYAGES,
+        "voyages": metas,
+        "rooms": rooms,
     }
     with open("docs/data.json", "w") as f:
         json.dump(out, f, indent=2)
-    print(json.dumps(out, indent=2))
-    if all("error" in v for v in voyages):
-        sys.exit(1)
+    print(f"voyages: {VOYAGES}")
+    for v, r in per_voyage.items():
+        print(f"  {v}: {len(r)} rooms")
+    print(f"common to all 3: {len(rooms)} rooms")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as exc:  # noqa: BLE001
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
