@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T10:57:27.284449+00:00",
+  "generatedAt": "2026-05-18T14:28:39.889958+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -70,6 +70,20 @@
     },
     {
       "stateroomId": "6104",
+      "deck": 6,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04C",
+      "location": "MID",
+      "prices": {
+        "DD1566": 3464.08,
+        "DD1567": 10529.74,
+        "DD1568": 4113.66
+      },
+      "total": 18107.48
+    },
+    {
+      "stateroomId": "6108",
       "deck": 6,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
