@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T23:33:18.056628+00:00",
+  "generatedAt": "2026-05-25T02:28:47.527132+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,6 +26,20 @@
     }
   ],
   "rooms": [
+    {
+      "stateroomId": "GTY",
+      "deck": 0,
+      "type": "DD-OUTSIDE",
+      "subtype": "DD-OUTSIDE-DELUXE",
+      "category": "09A",
+      "location": "GTY",
+      "prices": {
+        "DD1566": 2872.08,
+        "DD1567": 9185.74,
+        "DD1568": 3601.66
+      },
+      "total": 15659.48
+    },
     {
       "stateroomId": "5028",
       "deck": 5,
@@ -181,6 +195,34 @@
       "total": 18381.48
     },
     {
+      "stateroomId": "7136",
+      "deck": 7,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04B",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3504.08,
+        "DD1567": 10683.74,
+        "DD1568": 4193.66
+      },
+      "total": 18381.48
+    },
+    {
+      "stateroomId": "7138",
+      "deck": 7,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04B",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3504.08,
+        "DD1567": 10683.74,
+        "DD1568": 4193.66
+      },
+      "total": 18381.48
+    },
+    {
       "stateroomId": "7624",
       "deck": 7,
       "type": "DD-VERANDAH",
@@ -221,6 +263,20 @@
         "DD1568": 4193.66
       },
       "total": 18381.48
+    },
+    {
+      "stateroomId": "7666",
+      "deck": 7,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEOCEANVIEW",
+      "category": "05B",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3096.08,
+        "DD1567": 9507.74,
+        "DD1568": 3665.66
+      },
+      "total": 16269.48
     },
     {
       "stateroomId": "9108",
