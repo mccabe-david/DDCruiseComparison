@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T19:04:14.041999+00:00",
+  "generatedAt": "2026-06-03T22:08:55.016612+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,20 +26,6 @@
     }
   ],
   "rooms": [
-    {
-      "stateroomId": "5028",
-      "deck": 5,
-      "type": "DD-VERANDAH",
-      "subtype": "DD-VERANDAH-DELUXEFAMILY",
-      "category": "04E",
-      "location": "FORWARD",
-      "prices": {
-        "DD1566": 3184.08,
-        "DD1567": 9717.74,
-        "DD1568": 3785.66
-      },
-      "total": 16687.48
-    },
     {
       "stateroomId": "5042",
       "deck": 5,
