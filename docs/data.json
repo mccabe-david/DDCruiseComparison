@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T01:24:00.607342+00:00",
+  "generatedAt": "2026-07-18T04:19:22.114644+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,20 +26,6 @@
     }
   ],
   "rooms": [
-    {
-      "stateroomId": "6016",
-      "deck": 6,
-      "type": "DD-OUTSIDE",
-      "subtype": "DD-OUTSIDE-DELUXEFAMILY",
-      "category": "08A",
-      "location": "FORWARD",
-      "prices": {
-        "DD1566": 3048.08,
-        "DD1567": 9185.74,
-        "DD1568": 3649.66
-      },
-      "total": 15883.48
-    },
     {
       "stateroomId": "6104",
       "deck": 6,
