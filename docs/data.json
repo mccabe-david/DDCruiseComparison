@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T19:52:32.717203+00:00",
+  "generatedAt": "2026-07-24T20:54:16.545768+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,20 +26,6 @@
     }
   ],
   "rooms": [
-    {
-      "stateroomId": "GTY",
-      "deck": 0,
-      "type": "DD-INSIDE",
-      "subtype": "DD-INSIDE-STANDARD",
-      "category": "11B",
-      "location": "GTY",
-      "prices": {
-        "DD1566": 2584.08,
-        "DD1567": 8863.74,
-        "DD1568": 3601.66
-      },
-      "total": 15049.48
-    },
     {
       "stateroomId": "6016",
       "deck": 6,
