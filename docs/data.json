@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T22:18:41.213524+00:00",
+  "generatedAt": "2026-08-09T22:56:02.751802+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,20 +26,6 @@
     }
   ],
   "rooms": [
-    {
-      "stateroomId": "GTY",
-      "deck": 0,
-      "type": "DD-INSIDE",
-      "subtype": "DD-INSIDE-STANDARD",
-      "category": "11B",
-      "location": "GTY",
-      "prices": {
-        "DD1566": 2584.08,
-        "DD1567": 8863.74,
-        "DD1568": 3537.66
-      },
-      "total": 14985.48
-    },
     {
       "stateroomId": "6016",
       "deck": 6,
@@ -271,6 +257,20 @@
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
       "category": "04A",
       "location": "AFT",
+      "prices": {
+        "DD1566": 3592.08,
+        "DD1567": 10963.74,
+        "DD1568": 4289.66
+      },
+      "total": 18845.48
+    },
+    {
+      "stateroomId": "10594",
+      "deck": 10,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04A",
+      "location": "MID",
       "prices": {
         "DD1566": 3592.08,
         "DD1567": 10963.74,
