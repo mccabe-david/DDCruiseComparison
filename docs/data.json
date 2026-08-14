@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T10:48:07.594922+00:00",
+  "generatedAt": "2026-08-14T11:36:03.698595+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -252,6 +252,20 @@
     },
     {
       "stateroomId": "9014",
+      "deck": 9,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEOCEANVIEW",
+      "category": "05A",
+      "location": "FORWARD",
+      "prices": {
+        "DD1566": 3160.08,
+        "DD1567": 9661.74,
+        "DD1568": 3761.66
+      },
+      "total": 16583.48
+    },
+    {
+      "stateroomId": "9514",
       "deck": 9,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEOCEANVIEW",
