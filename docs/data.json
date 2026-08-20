@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T21:49:51.500667+00:00",
+  "generatedAt": "2026-08-20T22:15:30.424922+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -8,21 +8,21 @@
   "voyages": [
     {
       "voyageId": "DD1566",
-      "packageCode": "4PESJ",
-      "startDate": "2027-04-12",
-      "endDate": "2027-04-16"
+      "packageCode": null,
+      "startDate": null,
+      "endDate": null
     },
     {
       "voyageId": "DD1567",
-      "packageCode": null,
-      "startDate": null,
-      "endDate": null
+      "packageCode": "7SJU",
+      "startDate": "2027-04-16",
+      "endDate": "2027-04-23"
     },
     {
       "voyageId": "DD1568",
-      "packageCode": null,
-      "startDate": null,
-      "endDate": null
+      "packageCode": "4SJPC",
+      "startDate": "2027-04-23",
+      "endDate": "2027-04-27"
     }
   ],
   "rooms": []
