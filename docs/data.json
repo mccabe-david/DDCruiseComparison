@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T22:49:21.664476+00:00",
+  "generatedAt": "2026-08-24T23:13:31.577695+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -139,7 +139,7 @@
       "total": 18107.48
     },
     {
-      "stateroomId": "6620",
+      "stateroomId": "6634",
       "deck": 6,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
@@ -153,7 +153,7 @@
       "total": 18107.48
     },
     {
-      "stateroomId": "6634",
+      "stateroomId": "6636",
       "deck": 6,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
