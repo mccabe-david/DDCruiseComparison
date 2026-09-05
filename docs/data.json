@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T20:33:02.390278+00:00",
+  "generatedAt": "2026-09-05T22:27:52.341043+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -26,20 +26,6 @@
     }
   ],
   "rooms": [
-    {
-      "stateroomId": "5178",
-      "deck": 5,
-      "type": "DD-OUTSIDE",
-      "subtype": "DD-OUTSIDE-DELUXEFAMILY",
-      "category": "08C",
-      "location": "AFT",
-      "prices": {
-        "DD1566": 2984.08,
-        "DD1567": 8961.74,
-        "DD1568": 3577.66
-      },
-      "total": 15523.48
-    },
     {
       "stateroomId": "5668",
       "deck": 5,
