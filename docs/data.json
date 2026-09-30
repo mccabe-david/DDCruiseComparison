@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T09:07:19.870921+00:00",
+  "generatedAt": "2026-09-30T16:00:04.276132+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -447,18 +447,18 @@
       "total": 18845.48
     },
     {
-      "stateroomId": "13000",
-      "deck": 13,
+      "stateroomId": "12502",
+      "deck": 12,
       "type": "DD-SUITE",
-      "subtype": "DD-SUITE-CONCIERGE-TOWER",
-      "category": "01A",
-      "location": "MID",
+      "subtype": "DD-SUITE-CONCIERGE-ROYAL",
+      "category": "01B",
+      "location": "FORWARD",
       "prices": {
-        "DD1566": 21784.08,
-        "DD1567": 39733.74,
-        "DD1568": 21561.66
+        "DD1566": 15184.08,
+        "DD1567": 28855.74,
+        "DD1568": 15017.66
       },
-      "total": 83079.48
+      "total": 59057.48
     }
   ]
 }
