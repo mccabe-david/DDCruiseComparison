@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T19:12:33.499907+00:00",
+  "generatedAt": "2026-10-06T23:08:41.222240+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -308,6 +308,20 @@
     },
     {
       "stateroomId": "7138",
+      "deck": 7,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04B",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3536.08,
+        "DD1567": 10683.74,
+        "DD1568": 4193.66
+      },
+      "total": 18413.48
+    },
+    {
+      "stateroomId": "7632",
       "deck": 7,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
