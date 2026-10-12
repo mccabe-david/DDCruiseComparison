@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T09:57:31.322595+00:00",
+  "generatedAt": "2026-10-12T19:35:04.513502+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -237,35 +237,35 @@
       "total": 18139.48
     },
     {
-      "stateroomId": "6616",
-      "deck": 6,
-      "type": "DD-VERANDAH",
-      "subtype": "DD-VERANDAH-DELUXEFAMILY",
-      "category": "04C",
-      "location": "AFT",
-      "prices": {
-        "DD1566": 3496.08,
-        "DD1567": 10529.74,
-        "DD1568": 4113.66
-      },
-      "total": 18139.48
-    },
-    {
-      "stateroomId": "6618",
-      "deck": 6,
-      "type": "DD-VERANDAH",
-      "subtype": "DD-VERANDAH-DELUXEFAMILY",
-      "category": "04C",
-      "location": "AFT",
-      "prices": {
-        "DD1566": 3496.08,
-        "DD1567": 10529.74,
-        "DD1568": 4113.66
-      },
-      "total": 18139.48
-    },
-    {
       "stateroomId": "6620",
+      "deck": 6,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04C",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3496.08,
+        "DD1567": 10529.74,
+        "DD1568": 4113.66
+      },
+      "total": 18139.48
+    },
+    {
+      "stateroomId": "6634",
+      "deck": 6,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04C",
+      "location": "AFT",
+      "prices": {
+        "DD1566": 3496.08,
+        "DD1567": 10529.74,
+        "DD1568": 4113.66
+      },
+      "total": 18139.48
+    },
+    {
+      "stateroomId": "6636",
       "deck": 6,
       "type": "DD-VERANDAH",
       "subtype": "DD-VERANDAH-DELUXEFAMILY",
@@ -501,20 +501,6 @@
         "DD1568": 4289.66
       },
       "total": 18877.48
-    },
-    {
-      "stateroomId": "12502",
-      "deck": 12,
-      "type": "DD-SUITE",
-      "subtype": "DD-SUITE-CONCIERGE-ROYAL",
-      "category": "01B",
-      "location": "FORWARD",
-      "prices": {
-        "DD1566": 15184.08,
-        "DD1567": 28855.74,
-        "DD1568": 15017.66
-      },
-      "total": 59057.48
     }
   ]
 }
