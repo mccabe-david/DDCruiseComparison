@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T00:43:39.130824+00:00",
+  "generatedAt": "2026-10-14T05:36:00.682488+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -515,6 +515,20 @@
         "DD1568": 4289.66
       },
       "total": 18877.48
+    },
+    {
+      "stateroomId": "12502",
+      "deck": 12,
+      "type": "DD-SUITE",
+      "subtype": "DD-SUITE-CONCIERGE-ROYAL",
+      "category": "01B",
+      "location": "FORWARD",
+      "prices": {
+        "DD1566": 15184.08,
+        "DD1567": 28855.74,
+        "DD1568": 15017.66
+      },
+      "total": 59057.48
     }
   ]
 }
