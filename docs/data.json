@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T15:55:56.946918+00:00",
+  "generatedAt": "2026-10-15T19:34:37.802429+00:00",
   "voyageOrder": [
     "DD1566",
     "DD1567",
@@ -431,6 +431,20 @@
         "DD1568": 3761.66
       },
       "total": 16615.48
+    },
+    {
+      "stateroomId": "9584",
+      "deck": 9,
+      "type": "DD-VERANDAH",
+      "subtype": "DD-VERANDAH-DELUXEFAMILY",
+      "category": "04A",
+      "location": "MID",
+      "prices": {
+        "DD1566": 3624.08,
+        "DD1567": 10963.74,
+        "DD1568": 4289.66
+      },
+      "total": 18877.48
     },
     {
       "stateroomId": "10114",
